@@ -14,3 +14,7 @@ func _ready() -> void:
 
 func _on_chat_detect_body_entered(body: Node3D) -> void:
 	pass # Replace with function body.
+
+
+func _on_chat_detect_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.

@@ -4,6 +4,7 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+var player_in_area = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -28,5 +29,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+
 func _on_chat_detect_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+	if body.has_method("player"):
+		player_in_area = true
+
+func _on_chat_detect_body_exited(body: Node3D) -> void:
+	if body.has_method("player"):
+		player_in_area = false
